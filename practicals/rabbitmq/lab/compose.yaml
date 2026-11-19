@@ -1,0 +1,16 @@
+# Lab cluster for ../playbook.md: 3 RabbitMQ 4.1 nodes, classic peer discovery.
+# ⚠️ Lab only: the credentials and Erlang cookie are placeholders.
+name: rmqlab
+x-rabbit: &rabbit
+  image: rabbitmq:4.1-management
+  environment:
+    RABBITMQ_ERLANG_COOKIE: lab-cookie-change-me
+  volumes: ["./rabbitmq.conf:/etc/rabbitmq/conf.d/10-lab.conf:ro"]
+  healthcheck:
+    test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+    interval: 10s
+    retries: 10
+services:
+  rabbit1: { <<: *rabbit, hostname: rabbit1, ports: ["127.0.0.1:5672:5672", "127.0.0.1:15672:15672", "127.0.0.1:15692:15692"] }
+  rabbit2: { <<: *rabbit, hostname: rabbit2 }
+  rabbit3: { <<: *rabbit, hostname: rabbit3 }

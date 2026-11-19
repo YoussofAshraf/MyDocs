@@ -1,0 +1,6 @@
+{
+  "theme": "default",
+  "themeVariables": { "fontFamily": "ui-sans-serif, system-ui, 'Segoe UI', sans-serif" },
+  "flowchart": { "curve": "basis", "htmlLabels": true },
+  "sequence": { "mirrorActors": false }
+}

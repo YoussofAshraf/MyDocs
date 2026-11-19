@@ -77,7 +77,7 @@ sequenceDiagram
     participant DB as Postgres
     participant DZ as Debezium
     participant K as Kafka
-    API->>DB: BEGIN; INSERT order; INSERT outbox(event); COMMIT
+    API->>DB: BEGIN → INSERT order → INSERT outbox(event) → COMMIT
     DZ->>DB: read WAL (logical replication)
     DZ->>K: publish OrderCreated (from outbox row)
     Note over API,K: no dual write → no lost or phantom events ✅

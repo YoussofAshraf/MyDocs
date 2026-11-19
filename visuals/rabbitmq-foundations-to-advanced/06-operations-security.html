@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Operations &amp; Security · Visual</title>
+<meta name="description" content="3 animated illustrations from rabbitmq-foundations-to-advanced/06-operations-security.md">
+<link rel="stylesheet" href="../assets/visuals.css">
+</head>
+<body>
+<header class="top">
+  <nav class="crumbs"><a href="../index.html">All guides</a> <span>›</span> <a href="index.html">🐰 RabbitMQ</a></nav>
+  <h1>06 · Operations &amp; Security 🔴</h1>
+  <p class="meta">3 animated illustrations from rabbitmq-foundations-to-advanced/06-operations-security.md · <a href="../../rabbitmq-foundations-to-advanced/06-operations-security.md">read the Markdown</a> · Advanced</p>
+  <nav class="chapnav"><a href="05-clustering-ha.html">← Clustering &amp; HA</a> · <a href="07-cheatsheet.html">Next: Cheatsheet →</a></nav>
+  <ol class="toc"><li><a href="#fig-1"><span class="num">1</span>🔭 Monitoring</a></li><li><a href="#fig-2"><span class="num">2</span>🚨 Resource Alarms &amp; Flow Control</a></li><li><a href="#fig-3"><span class="num">3</span>🔐 Security</a></li></ol>
+</header>
+<main>
+<section class="fig play" id="fig-1" data-kind="flowchart" style="--total:4.05">
+  <header class="fig-head">
+    <div><span class="tag">Flow · 1/3</span>
+    <h2>🔭 Monitoring</h2></div>
+    <div class="ctl" role="group" aria-label="Animation controls">
+      <button class="replay" type="button" title="Replay">↻ Replay</button>
+      <button class="pause" type="button" title="Pause or resume">⏸</button>
+      <select class="speed" aria-label="Speed"><option value="2">0.5×</option><option value="1" selected>1×</option><option value="0.5">2×</option></select>
+    </div>
+  </header>
+  <div class="stage mermaid" style="--w:1118px"><svg data-w="1118" id="mm167" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 1118.03px; background-color: transparent;" viewBox="0 0 1118.03125 198" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mm167{font-family:ui-sans-serif,system-ui,'Segoe UI',sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mm167 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mm167 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mm167 .error-icon{fill:#552222;}#mm167 .error-text{fill:#552222;stroke:#552222;}#mm167 .edge-thickness-normal{stroke-width:1px;}#mm167 .edge-thickness-thick{stroke-width:3.5px;}#mm167 .edge-pattern-solid{stroke-dasharray:0;}#mm167 .edge-thickness-invisible{stroke-width:0;fill:none;}#mm167 .edge-pattern-dashed{stroke-dasharray:3;}#mm167 .edge-pattern-dotted{stroke-dasharray:2;}#mm167 .marker{fill:#333333;stroke:#333333;}#mm167 .marker.cross{stroke:#333333;}#mm167 svg{font-family:ui-sans-serif,system-ui,'Segoe UI',sans-serif;font-size:16px;}#mm167 p{margin:0;}#mm167 .label{font-family:ui-sans-serif,system-ui,'Segoe UI',sans-serif;color:#333;}#mm167 .cluster-label text{fill:#333;}#mm167 .cluster-label span{color:#333;}#mm167 .cluster-label span p{background-color:transparent;}#mm167 .label text,#mm167 span{fill:#333;color:#333;}#mm167 .node rect,#mm167 .node circle,#mm167 .node ellipse,#mm167 .node polygon,#mm167 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mm167 .rough-node .label text,#mm167 .node .label text,#mm167 .image-shape .label,#mm167 .icon-shape .label{text-anchor:middle;}#mm167 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mm167 .rough-node .label,#mm167 .node .label,#mm167 .image-shape .label,#mm167 .icon-shape .label{text-align:center;}#mm167 .node.clickable{cursor:pointer;}#mm167 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mm167 .arrowheadPath{fill:#333333;}#mm167 .edgePaths .path{stroke:#333333;stroke-width:1px;}#mm167 .flowchart-link{stroke:#333333;fill:none;}#mm167 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mm167 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mm167 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mm167 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mm167 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mm167 .cluster text{fill:#333;}#mm167 .cluster span{color:#333;}#mm167 .node .collapsed-indicator{fill:#aaaa33;stroke:none;opacity:0.6;}#mm167 .node .collapsed-separator{stroke:#aaaa33;stroke-width:0.75px;}#mm167 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:ui-sans-serif,system-ui,'Segoe UI',sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mm167 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mm167 rect.text{fill:none;stroke-width:0;}#mm167 .icon-shape,#mm167 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mm167 .icon-shape p,#mm167 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mm167 .icon-shape .label rect,#mm167 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mm167 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mm167 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mm167 .node .neo-node{stroke:#9370DB;}#mm167 [data-look="neo"].node rect,#mm167 [data-look="neo"].cluster rect,#mm167 [data-look="neo"].node polygon{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mm167 [data-look="neo"].swimlane.cluster rect{filter:none;}#mm167 [data-look="neo"].node path{stroke:#9370DB;stroke-width:1px;}#mm167 [data-look="neo"].node .outer-path{filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mm167 [data-look="neo"].node .neo-line path{stroke:#9370DB;filter:none;}#mm167 [data-look="neo"].node circle{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mm167 [data-look="neo"].node circle .state-start{fill:#000000;}#mm167 [data-look="neo"].icon-shape .icon{fill:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mm167 [data-look="neo"].icon-shape .icon-neo path{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mm167 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mm167_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="mm167_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"/></marker><marker id="mm167_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edgePaths"><path d="M670.641,105L674.807,105C678.974,105,687.307,105,694.974,105C702.641,105,709.641,105,713.141,105L716.641,105" id="mm167-L_N_P_0" pathLength="1" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="--t:0.65;;" data-edge="true" data-et="edge" data-id="L_N_P_0" data-points="W3sieCI6NjcwLjY0MDYyNSwieSI6MTA1fSx7IngiOjY5NS42NDA2MjUsInkiOjEwNX0seyJ4Ijo3MjAuNjQwNjI1LCJ5IjoxMDV9XQ==" data-look="classic" marker-end="url(#mm167_flowchart-v2-pointEnd)"/><circle class="pkt" r="4.5" style="--t:0.65;offset-path:path('M670.641,105L674.807,105C678.974,105,687.307,105,694.974,105C702.641,105,709.641,105,713.141,105L716.641,105')"/><path d="M839.456,78L848.198,72.833C856.939,67.667,874.423,57.333,886.665,52.167C898.906,47,905.906,47,909.406,47L912.906,47" id="mm167-L_P_G_0" pathLength="1" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="--t:1.45;;" data-edge="true" data-et="edge" data-id="L_P_G_0" data-points="W3sieCI6ODM5LjQ1NTk1MzY2Mzc5MzEsInkiOjc4fSx7IngiOjg5MS45MDYyNSwieSI6NDd9LHsieCI6OTE2LjkwNjI1LCJ5Ijo0N31d" data-look="classic" marker-end="url(#mm167_flowchart-v2-pointEnd)"/><circle class="pkt" r="4.5" style="--t:1.45;offset-path:path('M839.456,78L848.198,72.833C856.939,67.667,874.423,57.333,886.665,52.167C898.906,47,905.906,47,909.406,47L912.906,47')"/><path d="M839.456,132L848.198,137.167C856.939,142.333,874.423,152.667,887.793,157.833C901.164,163,910.422,163,915.051,163L919.68,163" id="mm167-L_P_A_0" pathLength="1" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="--t:2.25;;" data-edge="true" data-et="edge" data-id="L_P_A_0" data-points="W3sieCI6ODM5LjQ1NTk1MzY2Mzc5MzEsInkiOjEzMn0seyJ4Ijo4OTEuOTA2MjUsInkiOjE2M30seyJ4Ijo5MjMuNjc5Njg3NSwieSI6MTYzfV0=" data-look="classic" marker-end="url(#mm167_flowchart-v2-pointEnd)"/><circle class="pkt" r="4.5" style="--t:2.25;offset-path:path('M839.456,132L848.198,137.167C856.939,142.333,874.423,152.667,887.793,157.833C901.164,163,910.422,163,915.051,163L919.68,163')"/><path d="M235.219,105L249.837,105C264.456,105,293.693,105,322.263,105C350.833,105,378.737,105,392.689,105L406.641,105" id="mm167-L_UI_N_0" class="edge-thickness-normal edge-pattern-dotted edge-thickness-normal edge-pattern-solid flowchart-link" style="--t:3.40;;" data-edge="true" data-et="edge" data-id="L_UI_N_0" data-points="W3sieCI6MjM1LjIxODc1LCJ5IjoxMDV9LHsieCI6MzIyLjkyOTY4NzUsInkiOjEwNX0seyJ4Ijo0MTAuNjQwNjI1LCJ5IjoxMDV9XQ==" data-look="classic" marker-end="url(#mm167_flowchart-v2-pointEnd)"/><circle class="pkt" r="4.5" style="--t:3.40;offset-path:path('M235.219,105L249.837,105C264.456,105,293.693,105,322.263,105C350.833,105,378.737,105,392.689,105L406.641,105')"/></g><g class="edgeLabels"><g class="edgeLabel" style="--t:1.00"><g class="label" data-id="L_N_P_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="--t:1.80"><g class="label" data-id="L_P_G_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="--t:2.60"><g class="label" data-id="L_P_A_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(322.9296875, 105)" style="--t:3.75"><g class="label" data-id="L_UI_N_0" transform="translate(-62.7109375, -12)"><foreignObject width="125.421875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>ad-hoc inspection</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="mm167-flowchart-N-0" data-look="classic" transform="translate(540.640625, 105)" style="--t:0.30"><rect class="basic label-container" style="" x="-130" y="-63" width="260" height="126"/><g class="label" style="" transform="translate(-100, -48)"><rect/><foreignObject width="200" height="96"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>🐇 nodes<br />rabbitmq_prometheus plugin<br />:15692/metrics</p></span></div></foreignObject></g></g><g class="node default" id="mm167-flowchart-P-1" data-look="classic" transform="translate(793.7734375, 105)" style="--t:1.30"><rect class="basic label-container" style="" x="-73.1328125" y="-27" width="146.265625" height="54"/><g class="label" style="" transform="translate(-43.1328125, -12)"><rect/><foreignObject width="86.265625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Prometheus</p></span></div></foreignObject></g></g><g class="node default" id="mm167-flowchart-G-3" data-look="classic" transform="translate(1013.46875, 47)" style="--t:2.10"><rect class="basic label-container" style="" x="-96.5625" y="-39" width="193.125" height="78"/><g class="label" style="" transform="translate(-66.5625, -24)"><rect/><foreignObject width="133.125" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>📊 Grafana<br />official dashboards</p></span></div></foreignObject></g></g><g class="node default" id="mm167-flowchart-A-5" data-look="classic" transform="translate(1013.46875, 163)" style="--t:2.90"><rect class="basic label-container" style="" x="-89.7890625" y="-27" width="179.578125" height="54"/><g class="label" style="" transform="translate(-59.7890625, -12)"><rect/><foreignObject width="119.578125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>🚨 Alertmanager</p></span></div></foreignObject></g></g><g class="node default" id="mm167-flowchart-UI-6" data-look="classic" transform="translate(121.609375, 105)" style="--t:3.05"><rect class="basic label-container" style="" x="-113.609375" y="-27" width="227.21875" height="54"/><g class="label" style="" transform="translate(-83.609375, -12)"><rect/><foreignObject width="167.21875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Management UI :15672</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="mm167-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><defs><filter id="mm167-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs></svg></div>
+  <div class="progress"><span></span></div>
+  <p class="hint">👀 Boxes light up as the flow reaches them and each arrow draws in the order the guide defines it. Glowing dots keep running along the arrows to show which way things move.</p>
+  <div class="explain"><div class="prose"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Watch for</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Queue depth</strong> (ready)</td>
+<td>Steady growth 📈</td>
+<td>Consumers can't keep up</td>
+</tr>
+<tr>
+<td><strong>Unacked</strong> messages</td>
+<td>High or stuck</td>
+<td>Consumers stuck or missing acks</td>
+</tr>
+<tr>
+<td>Publish vs deliver/ack rate</td>
+<td>Publish &gt; ack for a long time</td>
+<td>Backlog building</td>
+</tr>
+<tr>
+<td><strong>Consumers per queue</strong></td>
+<td>Drops to 0</td>
+<td>Messages pile up silently</td>
+</tr>
+<tr>
+<td><strong>DLQ depth</strong></td>
+<td>&gt; 0</td>
+<td>Failing or poison messages</td>
+</tr>
+<tr>
+<td>Memory and disk alarms</td>
+<td>Triggered</td>
+<td>Publishers <strong>blocked</strong></td>
+</tr>
+<tr>
+<td>Connection/channel count + churn</td>
+<td>Spikes</td>
+<td>Connection leak (connect per message)</td>
+</tr>
+<tr>
+<td>File descriptors, Erlang processes</td>
+<td>Near the limit</td>
+<td>Capacity issue</td>
+</tr>
+</tbody>
+</table></div><div class="steps"><h4>Step by step</h4><ol><li style="--t:0.65"><b>🐇 nodes rabbitmq_prometheus plugin :15692/metrics</b> → <b>Prometheus</b></li><li style="--t:1.45"><b>Prometheus</b> → <b>📊 Grafana official dashboards</b></li><li style="--t:2.25"><b>Prometheus</b> → <b>🚨 Alertmanager</b></li><li style="--t:3.40"><b>Management UI :15672</b> ⇢ <b>🐇 nodes rabbitmq_prometheus plugin :15692/metrics</b> <span class="lbl">ad-hoc inspection</span></li></ol></div></div>
+</section>
+<section class="fig play" id="fig-2" data-kind="ascii" style="--total:1.08">
+  <header class="fig-head">
+    <div><span class="tag">Diagram · 2/3</span>
+    <h2>🚨 Resource Alarms &amp; Flow Control</h2></div>
+    <div class="ctl" role="group" aria-label="Animation controls">
+      <button class="replay" type="button" title="Replay">↻ Replay</button>
+      <button class="pause" type="button" title="Pause or resume">⏸</button>
+      <select class="speed" aria-label="Speed"><option value="2">0.5×</option><option value="1" selected>1×</option><option value="0.5">2×</option></select>
+    </div>
+  </header>
+  <div class="stage"><pre class="ascii"><span class="ln" style="--t:0.20"> memory used  <span class="bx">─────────────────────────────</span>[ vm_memory_high_watermark (0.6) ]<span class="bx">──</span><span class="ar">▶</span> 🚫 BLOCK publishers</span><span class="ln" style="--t:0.42"> disk free    <span class="ar">◀</span><span class="bx">─</span>[ disk_free_limit ]<span class="bx">────────────────────────────────────────────</span> 🚫 BLOCK publishers</span><span class="ln" style="--t:0.64"> </span><span class="ln" style="--t:0.86"> publishers: connection.blocked <span class="ar">→</span> wait     consumers: keep consuming <span class="ok">✅</span> (drains the backlog)</span></pre></div>
+  <div class="progress"><span></span></div>
+  <p class="hint">👀 The drawing is revealed line by line. Arrows pulse, and ✅ / ❌ marks pop in to show the verdicts.</p>
+  <div class="explain"><div class="prose"><blockquote>
+<p>💡 This is why publishers and consumers should use <strong>separate connections</strong>: a blocked publishing connection then can't stall consumption.</p>
+</blockquote></div></div>
+</section>
+<section class="fig play" id="fig-3" data-kind="ascii" style="--total:1.74">
+  <header class="fig-head">
+    <div><span class="tag">Diagram · 3/3</span>
+    <h2>🔐 Security</h2></div>
+    <div class="ctl" role="group" aria-label="Animation controls">
+      <button class="replay" type="button" title="Replay">↻ Replay</button>
+      <button class="pause" type="button" title="Pause or resume">⏸</button>
+      <select class="speed" aria-label="Speed"><option value="2">0.5×</option><option value="1" selected>1×</option><option value="0.5">2×</option></select>
+    </div>
+  </header>
+  <div class="stage"><pre class="ascii"><span class="ln" style="--t:0.20"> <span class="bx">┌────────────────</span> Defense layers <span class="bx">────────────────┐</span></span><span class="ln" style="--t:0.42"> <span class="bx">│</span> 🌐 Network   private subnets, firewall 5672/5671, 15672, 25672, 4369</span><span class="ln" style="--t:0.64"> <span class="bx">│</span> 🔒 TLS       amqps://:5671, mgmt over HTTPS, inter-node TLS</span><span class="ln" style="--t:0.86"> <span class="bx">│</span> 🪪 AuthN     users/passwords, x509 client certs, OAuth 2.0 / OIDC, LDAP</span><span class="ln" style="--t:1.08"> <span class="bx">│</span> 📜 AuthZ     per-vhost configure / write / read regex permissions, topic permissions</span><span class="ln" style="--t:1.30"> <span class="bx">│</span> 🧾 Audit     event exchange plugin, logs</span><span class="ln" style="--t:1.52"> <span class="bx">└─────────────────────────────────────────────────┘</span></span></pre></div>
+  <div class="progress"><span></span></div>
+  <p class="hint">👀 The drawing is revealed line by line. Arrows pulse, and ✅ / ❌ marks pop in to show the verdicts.</p>
+  <div class="explain"></div>
+</section></main>
+<footer class="bottom"><nav class="chapnav"><a href="05-clustering-ha.html">← Clustering &amp; HA</a> · <a href="07-cheatsheet.html">Next: Cheatsheet →</a></nav></footer>
+<script src="../assets/visuals.js"></script>
+</body>
+</html>

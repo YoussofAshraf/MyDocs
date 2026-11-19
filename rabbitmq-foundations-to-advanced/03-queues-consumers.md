@@ -103,7 +103,7 @@ sequenceDiagram
     P->>B: publish #1, #2, #3 (async, batched)
     B-->>P: ack #1..#2 ✅ (persisted / replicated)
     B-->>P: nack #3 ❌ → republish
-    Note over P: track outstanding seq numbers;<br/>retry on nack or timeout
+    Note over P: track outstanding seq numbers,<br/>retry on nack or timeout
 ```
 
 ```
