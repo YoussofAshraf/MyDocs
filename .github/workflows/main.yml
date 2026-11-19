@@ -1,0 +1,50 @@
+# Publishes the repo as a static GitHub Pages site. The animated pages in visuals/
+# are committed already, so nothing is built here; the guides' .md files are
+# published next to them so each page's "read the Markdown" link keeps working.
+name: Publish docs to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          cp -r visuals *-foundations-to-advanced practicals _site/
+          rm -rf _site/visuals/build
+          touch _site/.nojekyll
+          cat > _site/index.html <<'HTML'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Animated Study Guides</title>
+          <meta http-equiv="refresh" content="0; url=visuals/">
+          <a href="visuals/">Open the animated study guides</a>
+          HTML
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
