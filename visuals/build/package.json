@@ -1,0 +1,8 @@
+{
+  "name": "visuals-build",
+  "private": true,
+  "description": "Renders the guides' Mermaid diagrams to SVG for the animated pages.",
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "11.4.2"
+  }
+}
